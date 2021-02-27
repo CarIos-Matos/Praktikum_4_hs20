@@ -1,7 +1,6 @@
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -15,13 +14,10 @@ public class SnakeSpiel {
   private Schlange schlange;
   private Tuer tuer;
   private Spielfeld spielfeld;
-  private Point goldStueck;
   private List<Point> goldStuecke = new ArrayList<>();
   private int anzahlGoldStuecke = 0;
   private boolean spielLaeuft = true;
   private Scanner scanner;
-  private final int hoehe = 10;
-  private final int breite = 40;
 
   public static void main(String[] args) {
     new SnakeSpiel().spielen();
@@ -48,6 +44,8 @@ public class SnakeSpiel {
   private void spielInitialisieren() {
 
     tuer = new Tuer(0, 5);
+    int hoehe = 10;
+    int breite = 40;
     spielfeld = new Spielfeld(breite, hoehe);
     setzeGoldstuecke(anzahlGoldStuecke);
     schlange = new Schlange(30, 2);
@@ -109,8 +107,6 @@ public class SnakeSpiel {
           goldStuecke.remove(i);
         }
       }
-
-      goldStueck = null;
       schlange.wachsen();
       System.out.println("Goldstueck eingesammelt.");
     }

@@ -23,7 +23,7 @@ public class Schlange {
   /**
    * Prueft, ob die Schlange am bezeichneten Standort ist
    *
-   * @param standort
+   * @param standort Standort bzw Punkt welcher geprüft werden soll.
    * @return true, falls die Schlange am bezeichneten Standort ist
    */
   public boolean istAufPunkt(Point standort) {
@@ -33,7 +33,7 @@ public class Schlange {
   /**
    * Prueft, ob der Schlangenkopf am bezeichneten Standort ist
    *
-   * @param standort
+   * @param standort Standort bzw Punkt welcher geprüft werden soll.
    * @return wahr, falls der Schlangenkopf am bezeichneten Standort ist
    */
   public boolean istKopfAufPunkt(Point standort) {
@@ -53,25 +53,25 @@ public class Schlange {
    */
   public void bewege(char richtung) {
     Point kopf = kopf();
-    switch (richtung) {
-      case 'w':
+    switch (richtung)
+    {
+      case 'w' -> {
         schlange.add(new Point(kopf.x, kopf.y - 1));
         schlange.remove(0);
-        break;
-      case 's':
+      }
+      case 's' -> {
         schlange.add(new Point(kopf.x, kopf.y + 1));
         schlange.remove(0);
-        break;
-      case 'a':
+      }
+      case 'a' -> {
         schlange.add(new Point(kopf.x - 1, kopf.y));
         schlange.remove(0);
-        break;
-      case 'd':
+      }
+      case 'd' -> {
         schlange.add(new Point(kopf.x + 1, kopf.y));
         schlange.remove(0);
-        break;
-      default:
-        System.out.println("Ungültige Taste");
+      }
+      default -> System.out.println("Ungültige Taste");
     }
   }
 
