@@ -4,7 +4,7 @@ import java.awt.Point;
  * Repraesentiert eine Tuer.
  */
 public class Tuer {
-  private Point aktuellerOrt;
+  private final Point aktuellerOrt;
 
   /**
    * Konstruiert eine Tuer mit Standort
@@ -20,7 +20,7 @@ public class Tuer {
   /**
    * Prueft, ob die Tuer am bezeichneten Standort ist
    *
-   * @param standort
+   * @param standort Standort bzw Punkt welcher geprüft werden soll.
    * @return wahr, falls die Tuer am bezeichneten Standort ist
    */
   public boolean istAufPunkt(Point standort) {

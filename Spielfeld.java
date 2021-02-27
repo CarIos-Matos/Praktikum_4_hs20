@@ -5,8 +5,8 @@ import java.util.Random;
  * Enthaelt Angaben zum Spielfeld
  */
 public class Spielfeld {
-  private int hoehe;
-  private int breite;
+  private final int hoehe;
+  private final int breite;
   private Random random = new Random();
 
   /**
