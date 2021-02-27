@@ -93,7 +93,7 @@ public class SnakeSpiel {
   }
 
   private boolean istEinGoldstueckAufPunkt(Point punkt) {
-    for (int i = 0; i < anzahlGoldStuecke; i++)
+    for (int i = 0; i < goldStuecke.size(); i++)
     {
       if(goldStuecke.get(i).equals(punkt))
       {
@@ -109,6 +109,15 @@ public class SnakeSpiel {
 
   private void ueberpruefeSpielstatus() {
     if (istEinGoldstueckAufPunkt(schlange.gibPosition())) {
+      Point standortGoldstueck = schlange.gibPosition();
+      for (int i = 0; i < goldStuecke.size(); i++)
+      {
+        if(goldStuecke.get(i).equals(standortGoldstueck))
+        {
+          goldStuecke.remove(i);
+        }
+      }
+
       goldStueck = null;
       schlange.wachsen();
       System.out.println("Goldstueck eingesammelt.");
@@ -123,6 +132,7 @@ public class SnakeSpiel {
     }
   }
 
+
   private boolean istGewonnen() {
     return alleGoldstueckeGefressen() &&
       tuer.istAufPunkt(schlange.gibPosition());
@@ -131,13 +141,10 @@ public class SnakeSpiel {
   private boolean alleGoldstueckeGefressen()
   {
     boolean alleGoldstueckegefressen = false;
-    for (int i = 0; i < anzahlGoldStuecke; i++)
-    {
-      if(goldStuecke.get(i) == null)
+      if(goldStuecke.isEmpty())
       {
         alleGoldstueckegefressen = true;
       }
-    }
     return alleGoldstueckegefressen;
   }
 
