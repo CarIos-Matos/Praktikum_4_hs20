@@ -57,17 +57,9 @@ public class SnakeSpiel {
   {
     for (int i = 0; i < anzahlGoldStuecke; i++)
     {
-      int minimum = 0;
-      int x = berechneZufallsZahl(minimum, breite-1);
-      int y = berechneZufallsZahl(minimum, hoehe -1);
-      Point koordinategoldstueck = new Point(x, y);
+      Point koordinategoldstueck = spielfeld.erzeugeZufallspunktInnerhalb() ;
       this.goldStuecke.add(koordinategoldstueck);
     }
-  }
-
-  private int  berechneZufallsZahl(int min, int max)
-  {
-    return (int) ((Math.random() * (max - min)) + min);
   }
 
   private void zeichneSpielfeld() {
