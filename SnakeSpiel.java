@@ -45,6 +45,7 @@ public class SnakeSpiel
         scanner.close();
     }
 
+
     private void spielInitialisieren()
     {
 
