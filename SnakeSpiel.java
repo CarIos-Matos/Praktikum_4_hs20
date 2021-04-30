@@ -36,14 +36,16 @@ public class SnakeSpiel
         anzahlGoldstuecke = scanner.nextInt();
         setAnzahlGoldstuecke(anzahlGoldstuecke);
         spielInitialisieren();
-        while (spielLaeuft)
-        {
-            zeichneSpielfeld();
-            ueberpruefeSpielstatus();
-            fuehreSpielzugAus();
-        }
-        scanner.close();
+        //while here
     }
+
+    while (spielLaeuft)
+    {
+        zeichneSpielfeld();
+        ueberpruefeSpielstatus();
+        fuehreSpielzugAus();
+    }
+        scanner.close();
 
     private void spielInitialisieren()
     {
