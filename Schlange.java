@@ -115,8 +115,5 @@ public class Schlange
         return kopf();
     }
 
-    private Point kopf()
-    {
-        return schlange.get(schlange.size() - 1);
-    }
+    
 }
